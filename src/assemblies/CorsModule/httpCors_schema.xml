@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configSchema>
+	<sectionSchema name="system.webServer/httpCors">
+
+		<attribute name="allowHeaders" type="string" required="false"/>
+		<attribute name="exposeHeaders" type="string" required="false"/>
+		<!-- Set preFlightCacheMaxAge to 0 to disable Access-Control-Max-Age header (don't cache pre-flight response) -->
+		<attribute name="preflightCacheMaxAge" type="uint" defaultValue="300"/>
+		<attribute name="allowCredentials" type="bool" defaultValue="false"/>
+
+		<element name="allowOrigins">
+			<collection addElement="add">
+				<attribute name="origin" type="string" required="true" />
+			</collection>
+		</element>
+
+		<element name="resources">
+			<collection addElement="add">
+				<attribute name="path" type="string" required="true"/>
+				<attribute name="allowHeaders" type="string" required="false"/>
+				<attribute name="allowMethods" type="string" defaultValue="GET,HEAD,POST"/>
+				<attribute name="exposeHeaders" type="string" required="false"/>
+			</collection>
+		</element>
+
+	</sectionSchema>
+</configSchema>

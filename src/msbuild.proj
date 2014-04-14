@@ -1,0 +1,14 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="4.0">
+
+	<Import Project="solution\solution.properties"/>
+
+	<ItemGroup>
+		<ProjFile Include="**\*proj" Exclude="msbuild.proj" />
+	</ItemGroup>
+
+	<Target Name="Build">
+		<MSBuild Projects="%(ProjFile.FullPath)" Targets="Build" Properties="Configuration=$(Configuration)" BuildInParallel="true" />
+	</Target>
+
+	<Import Project="solution\solution.targets"/>
+</Project>
