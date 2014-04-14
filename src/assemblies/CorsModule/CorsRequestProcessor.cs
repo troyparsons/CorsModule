@@ -240,7 +240,7 @@ namespace Cors
                 response.Headers.Add(allowHeadersHeaderName, allowedHeaders);
             }
 
-            uint cacheMaxAge = configuration.PreflightCacheMaxAge;
+            int cacheMaxAge = configuration.PreflightCacheMaxAge;
             if (cacheMaxAge > 0)
             {
                 response.Headers.Add(cacheTimeHeaderName, cacheMaxAge.ToString(CultureInfo.InvariantCulture));

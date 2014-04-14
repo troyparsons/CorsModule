@@ -48,11 +48,11 @@ namespace Cors
             }
         }
 
-        public virtual uint PreflightCacheMaxAge
+        public virtual int PreflightCacheMaxAge
         {
             get
             {
-                return Convert.ToUInt32(base["preflightCacheMaxAge"], CultureInfo.InvariantCulture);
+                return (int) base["preflightCacheMaxAge"];
             }
         }
 

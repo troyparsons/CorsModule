@@ -164,9 +164,9 @@ namespace Cors
             Assert.AreEqual(expected, targetObject.IsMethodPermitted, "IsMethodPermitted incorrect");
         }
 
-        [TestCase(30U)]
-        [TestCase(600U)]
-        public void HandlePreflightRequest_SetsCacheMaxAge(uint cacheTime)
+        [TestCase(30)]
+        [TestCase(600)]
+        public void HandlePreflightRequest_SetsCacheMaxAge(int cacheTime)
         {
             SetupPreflightRequest();
             mockConfig.SetupGet(cfg => cfg.PreflightCacheMaxAge).Returns(cacheTime);
