@@ -74,6 +74,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="setup_webapp.bat" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -114,4 +115,8 @@
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="..\..\solution\solution.targets" />
+  <Target Name="Run">
+    <Exec Command="setup_webapp.bat &quot;$(WebProjectOutputDir)&quot;" />
+    <Exec Command="start http://localhost/CorsSampleApp/" />
+  </Target>
 </Project>
